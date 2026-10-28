@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { products } from "../../data/data";
+// import { products } from "../../data/data";
 
 const ProductContext = createContext();
 
@@ -51,9 +51,7 @@ function ProductProvider({ children }) {
   //   HandleGetProduct();
   // }, []);
 
-  useEffect(() => {
-    console.log("context:", Products);
-  }, [Products]);
+
 
   const AddTOCart = async (prod, quantity, size) => {
     try {
@@ -180,7 +178,7 @@ function ProductProvider({ children }) {
       value={{
         num,
         setNum,
-        Products,
+   
         AddTOCart,
         cartCount,
         UpdateCart,
