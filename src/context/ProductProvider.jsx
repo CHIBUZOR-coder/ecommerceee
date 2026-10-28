@@ -7,7 +7,7 @@ const ProductContext = createContext();
 function ProductProvider({ children }) {
   const [num, setNum] = useState(6);
   // eslint-disable-next-line no-unused-vars
-  const [Products, setProducts] = useState(products);
+  // const [Products, setProducts] = useState(products);
 
   const [CartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cartItems")) || [],
