@@ -6,8 +6,12 @@ import ProductContext from "../context/ProductProvider";
 import ProductsItems from "../shared/ProductsItems";
 
 function Home() {
-  // const { Products } = useContext(ProductContext);
+  const { Products } = useContext(ProductContext);
 
+  useEffect(() => {
+    // console.log("num:", num);
+    console.log("home:", Products);
+  }, [Products]);
 
   return (
     <Layout>

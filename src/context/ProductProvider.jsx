@@ -1,13 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-// import { products } from "../../data/data";
+import { products } from "../../data/data";
 
 const ProductContext = createContext();
 
 function ProductProvider({ children }) {
   const [num, setNum] = useState(6);
   // eslint-disable-next-line no-unused-vars
-  // const [Products, setProducts] = useState(products);
+  const [Products, setProducts] = useState(products);
 
   const [CartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cartItems")) || [],
@@ -51,7 +51,9 @@ function ProductProvider({ children }) {
   //   HandleGetProduct();
   // }, []);
 
-
+  useEffect(() => {
+    console.log("context:", Products);
+  }, [Products]);
 
   const AddTOCart = async (prod, quantity, size) => {
     try {
@@ -178,7 +180,7 @@ function ProductProvider({ children }) {
       value={{
         num,
         setNum,
-   
+        Products,
         AddTOCart,
         cartCount,
         UpdateCart,
